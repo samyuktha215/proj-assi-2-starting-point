@@ -11,18 +11,19 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/api/v1/carts")
 @CrossOrigin(origins = "http://localhost:3010")
 public class CartController {
     @Autowired
     CartService cartService;
 
-    @GetMapping("/carts/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<List<CartItem>> getAllCartItems(@PathVariable("id") Integer id) {
         List<CartItem> cartItems = cartService.getALLItems();
         return ResponseEntity.ok(cartItems);
     }
 
-    @PatchMapping("/carts/{id}")
+    @PatchMapping("/{id}")
     public Object addOrRemoveItem(@RequestParam("action") String action,
                                   @RequestBody CartItem item) {
 
@@ -34,7 +35,7 @@ public class CartController {
         return null;
     }
 
-    @DeleteMapping("/carts/{id}")
+    @DeleteMapping("/{id}")
     public Object deleteCartItems(@RequestParam("buyout") @Nullable String buyout) {
         if ("true".equals(buyout)) {
             cartService.deleteAllItems(false);
