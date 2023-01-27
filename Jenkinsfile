@@ -52,7 +52,7 @@ pipeline {
             echo 'test report generated'
         }
         failure {
-              echo ' mail to:Samyuktha.basam@gmail.com,subject:'The pipeline failed:''
+              echo 'it has failed or something'
         }         
         
     }
