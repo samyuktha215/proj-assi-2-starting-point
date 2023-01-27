@@ -38,11 +38,13 @@ pipeline {
                 sh 'mvn war:war'
                 echo 'packaged'
             }
-        } 
-        dir('backend') {
-               sh 'pwd' // prints /var/jenkins_home/workspace/proj_assi_2_starting_point/backend
-               sh 'mvn clean'
-        }   
+        }
+        stage('somestage') {
+            dir('backend') {
+                sh 'pwd' // prints /var/jenkins_home/workspace/proj_assi_2_starting_point/backend
+                sh 'mvn clean'
+            }
+        }
     }
    
     post {
