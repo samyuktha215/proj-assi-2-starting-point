@@ -19,25 +19,33 @@ pipeline {
 
         stage('build') {
             steps {
+                dir('backend') {
+                    sh 'mvn test-compile'
+                }
                 echo 'building...'
-                sh 'mvn test-compile'
                 echo 'finished building'
             }
         }
 
         stage('test') {
             steps {
+                dir('backend') {
+                    sh 'mvn surefire:test'
+                }
                 echo 'starting test.....'
                 // sh 'mvn test'
-                sh 'mvn surefire:test'
+                
                 echo 'finished test'
             }
         }
 
         stage('package') {
             steps {
+                dir('backend') {
+                  sh 'mvn war:war'
+                }
                 echo 'packaging...'
-                sh 'mvn war:war'
+                
                 echo 'packaged'
             }
         }
