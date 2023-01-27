@@ -9,8 +9,6 @@ import se.jensenyh.javacourse.saltmerch.backend.model.ColorVariant;
 import se.jensenyh.javacourse.saltmerch.backend.model.Product;
 import se.jensenyh.javacourse.saltmerch.backend.service.ProductService;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/v1/products")
 @CrossOrigin(origins = "http://localhost:3010")
