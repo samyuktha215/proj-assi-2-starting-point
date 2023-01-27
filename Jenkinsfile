@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('clean and checkout') {
             steps {
-                sh 'mvn clean'
+                sh 'mvn clean -f backend'
                 echo 'downloading github project...'
                 git credentialsId: 'assignment2', url: 'https://github.com/samyuktha215/proj-assi-2-starting-point.git'
             }
