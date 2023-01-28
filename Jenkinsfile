@@ -58,11 +58,11 @@ pipeline {
             }
         }
     }
-   
+    
     post {
         always {
             echo 'generating test report....'
-            junit 'target/*reports/**/*.xml'
+            junit 'target/surefire-reports/TEST-se.jensenyh.javacourse.saltmerch.backend.IntegrationTests.Tests.xml'
             echo 'test report generated'
         }
         failure {
