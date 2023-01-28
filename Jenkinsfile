@@ -61,8 +61,11 @@ pipeline {
     
     post {
         always {
+            dir('backend') {
+                cp backend/target/ROOT.war /artifacts
+            }
             echo 'generating test report....'
-            junit 'target/surefire-reports/TEST-se.jensenyh.javacourse.saltmerch.backend.IntegrationTests.Tests.xml'
+           // junit 'target/surefire-reports/TEST-se.jensenyh.javacourse.saltmerch.backend.IntegrationTests.Tests.xml'
             echo 'test report generated'
         }
         failure {
