@@ -53,7 +53,7 @@ pipeline {
             steps {
                 dir('backend') {
                     sh 'pwd' // prints /var/jenkins_home/workspace/proj_assi_2_starting_point/backend
-                    sh 'mvn clean'
+                    //sh 'mvn clean'
                 }
             }
         }
@@ -67,7 +67,7 @@ pipeline {
             
             dir('backend') {
                //sh 'cp target/root/ROOT.war /artifacts'
-               junit 'target/surefire-reports/**/*.xml'
+               junit 'target/surefire-reports/*.xml'
             }
             
             echo 'test report generated'
