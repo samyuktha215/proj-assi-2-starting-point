@@ -53,7 +53,7 @@ pipeline {
             steps {
                 dir('backend') {
                     sh 'pwd' // prints /var/jenkins_home/workspace/proj_assi_2_starting_point/backend
-                    sh 'cp target/root/ROOT.war /artifacts'
+                    sh 'cp target/ROOT.war /artifacts'
                 }
             }
         }
