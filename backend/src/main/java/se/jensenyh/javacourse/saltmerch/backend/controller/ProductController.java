@@ -9,6 +9,8 @@ import se.jensenyh.javacourse.saltmerch.backend.model.ColorVariant;
 import se.jensenyh.javacourse.saltmerch.backend.model.Product;
 import se.jensenyh.javacourse.saltmerch.backend.service.ProductService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/products")
 @CrossOrigin(origins = "http://localhost:3010")
@@ -16,11 +18,11 @@ public class ProductController
 {
 @Autowired
     ProductService productService;
-/*@GetMapping("/products")
+@GetMapping("/")
 public  ResponseEntity<List<Product>> getProducts(){
     List<Product>productList =productService.getProducts();
     return ResponseEntity.ok(productList);
-}*/
+}
 @GetMapping("/{var}")
 public Object getCategories(@PathVariable("var") String var){
     switch (var){
