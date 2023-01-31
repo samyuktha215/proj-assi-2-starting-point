@@ -61,11 +61,12 @@ pipeline {
     
     post {
         always {
+            echo 'generating test report....'
+            
             dir('backend') {
-               sh 'cp target/root/ROOT.war /artifacts'
+               //sh 'cp target/root/ROOT.war /artifacts'
                junit 'target/surefire-reports/*.xml'
             }
-            echo 'generating test report....'
             
             echo 'test report generated'
         }
